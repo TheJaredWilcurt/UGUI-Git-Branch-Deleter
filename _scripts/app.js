@@ -125,7 +125,7 @@ function runApp() {
 
     $(window).resize(function(){
         windowHeight = $(window).height();
-        branchContainerHeight = windowHeight - 350;
+        branchContainerHeight = windowHeight - 325;
         $("#allBranches").css("height", branchContainerHeight + "px");
     });
 

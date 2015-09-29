@@ -1,8 +1,53 @@
 
 // App specific styles
 
+
+
+/* Window styles */
+
+*::-webkit-scrollbar-track
+    border-radius: 10px
+    background: #FFF
+
+*::-webkit-scrollbar
+    width: 12px
+    background-color: #FFF
+
+*::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: #18BC9C
+
+html
+    border: 2px solid #18BC9C
+
 body
     overflow: hidden
+
+
+
+/* Navigation */
+
+.dragon
+    -webkit-app-region: drag
+
+.dragoff
+    -webkit-app-region: no-drag
+
+.navIcons
+    float: right
+    margin-right: 17px
+    a
+        line-height: 21px
+        padding: 19.5px 13.5px
+        color: #FFF
+        font-size: 15px
+        text-decoration: none
+        &:hover
+            color: #375A7F
+
+
+
+/* Basic app functionality */
 
 .browsie
     top: -28px
@@ -34,6 +79,15 @@ body
         &:nth-of-type(4n+4):hover
             background-color: #C3D1E0
 
+.allbranchtext
+    position: relative
+    top: 8px
+    left: 3px
+
+
+
+/* Jira and GitHub buttons and modals */
+
 #jiraModal,
 #githubModal
     background-color: rgba(0, 0, 0, 0.6)
@@ -52,10 +106,13 @@ body
     border-top-left-radius: 0px
     border-bottom-left-radius: 0px
 
-.allbranchtext
-    position: relative
-    top: 8px
-    left: 3px
+
+
+/* Media Queries */
+
+@media (min-width: 768px)
+    .navIcons
+        display: none
 
 @media(max-width: 991px)
     #allBranches div
