@@ -10,7 +10,15 @@ This was created as a real-world test for UGUI, the NW.js framework.
 
 * * *
 
-**How to run Git Branch Deleter**
+**How to run on Windows**
+
+1. [Download this.](https://github.com/TheJaredWilcurt/UGUI-Git-Branch-Deleter/releases/download/v1.2.0/UGUI-Git_Branch_Deleter-1.2.0-Win-64.zip)
+2. Unzip.
+3. Run the packaged exe.
+
+* * *
+
+**How to run Git Branch Deleter on OSX and Ubuntu**
 
 1. Download [UGUI: Git Branch Deleter](https://github.com/TheJaredWilcurt/UGUI-Git-Branch-Deleter/archive/master.zip)
 2. Download the correct version of [NW.js](http://nwjs.io) for your OS

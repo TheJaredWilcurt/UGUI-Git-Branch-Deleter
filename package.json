@@ -1,7 +1,7 @@
 {
     "name": "git_branch_deleter",                          // "Birds with Arms!"
     "main": "index.htm",                                   // The default page that is displayed on launch
-    "version": "1.0.0",                                    // MAJOR.MINOR.PATCH more info: semver.org
+    "version": "1.2.0",                                    // MAJOR.MINOR.PATCH more info: semver.org
     "author": "Jared Wilcurt",                             // Put your name or your team's name here, this is dynamically placed in the about section of your app
     "description": "",                                     // "Put human arms on pictures of birds!"
     "keywords": [ "git", "branch", "deleter" ],            // "birds", "arms", "novelty", "humor", "serious internet business"
