@@ -1,6 +1,8 @@
-#![UGUI: Git Branch Deleter Logo](/_img/logo.png "UGUI: Git Branch Deleter")
+#![UGUI: Git Branch Deleter Logo](/_img/readme.png "UGUI: Git Branch Deleter")
 
 This is a GUI that allows you to easily delete branches from a Git repo.
+
+![Screenshot](/_img/screenshot.png "Screenshot")
 
 As long as you can type `git --version` into your command line and it returns a version number you should be able to run this. It is cross platform, but relies on an existing installation of Git.
 
