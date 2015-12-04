@@ -1,9 +1,23 @@
 
+/////////////////////////// NOTE TO CONTRIBUTORS ////////////////////////////
+//                                                                         //
+// This is the main file with all code unique to UGUI: Git Branch Deleter. //
+// It relies heavily on helper functions supplied by the UGUI framework.   //
+//                                                                         //
+// Anything that starts with "ugui.something" is explained on ugui.io/api. //
+//                                                                         //
+// To access Dev mode, change the body class to dev in index.htm and       //
+// change toolbar to true in the package.json.                             //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 //Wait for the document to load before running ugui.js. Use either runUGUI or waitUGUI for immediate or delayed launch.
 $(document).ready( runApp );
-
-
-
 
 
 
@@ -85,7 +99,7 @@ function runApp() {
                         if ( $(currentRadioDial[i]).children().prop("checked") ) {
                             var pickedBranch = $(currentRadioDial[i]).children().val();
                             $("#branchToDelete").val(pickedBranch);
-                            $(".sendCmdArgs").prop('disabled', false);
+                            $(".delete-local").prop('disabled', false);
                         }
                     }
                     ugui.helpers.buildUGUIArgObject();
@@ -113,10 +127,10 @@ function runApp() {
         ugui.helpers.saveSettings();
     });
 
-    $(".sendCmdArgs").click(function(){
+    $(".delete-local").click(function(){
         var executableAndArgs = 'git -C ' + ugui.args.pathToRepo.value + ' branch -D ' + ugui.args.branchToDelete.value;
         ugui.helpers.runcmd(executableAndArgs);
-        $(".sendCmdArgs").prop('disabled', true);
+        $(".delete-local").prop('disabled', true);
         setTimeout(updateAllBranches, 1000);
     });
 

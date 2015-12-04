@@ -19,35 +19,6 @@
     <script type="text/javascript" src="_scripts/ugui.js"></script>
     <script type="text/javascript" src="_scripts/app.js"></script>
 
-
-
-
-
-
-
-    <!--
-      /////////////////////////////////////////////////////////////////
-      //                                                             //
-      //              COMMAND LINE ARGUMENT UI BINDINGS              //
-      //                                                             //
-      /////////////////////////////////////////////////////////////////
-      // The order of these arguments controls the order they will   //
-      // be sent out to the command line. If you place a name inside //
-      // double parenthesis like ((cows)) it will automatically be   //
-      // replaced by the value of the element in the #argsForm with  //
-      // a matching data-argName="cows".                             //
-      //                                                             //
-      // Input tags with a type of "file" will also automatically be //
-      // parsed into several sub-arguments for your ease of use such //
-      // as path, name, ext, size, lastModifiedDate, etc.            //
-      //                                                             //
-      // If you need the value of an element parsed for you supply a //
-      // definition. Consult the UGUI documentation for detailed     //
-      // information and instructions on how this feature works.     //
-      /////////////////////////////////////////////////////////////////
-    -->
-
-
   </head>
 
 
@@ -77,22 +48,22 @@
         /////////////////////////////////////////////////////////////////
       -->
 
-    <div class="navbar navbar-inverse navbar-fixed-top dragon" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top drag-enable" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <div class="navIcons">
-            <a title="About" href="#about" class="dragoff glyphicon glyphicon-question-sign" aria-hidden="true"><span class="sr-only">About</span></a>
-            <a title="Exit" href="#exit" class="dragoff glyphicon glyphicon-remove-sign" aria-hidden="true"><span class="sr-only">Exit</span></a>
+            <a title="About" href="#about" class="drag-disable glyphicon glyphicon-question-sign" aria-hidden="true"><span class="sr-only">About</span></a>
+            <a title="Exit" href="#exit" class="drag-disable glyphicon glyphicon-remove-sign" aria-hidden="true"><span class="sr-only">Exit</span></a>
           </div>
           <a class="navbar-brand">
-            <img src="_img/logo.png" alt="Defluff Logo" />
-            <span class="applicationName">Defluff</span>
+            <img src="_img/logo.png" alt="UGUI: Git Branch Deleter Logo" />
+            <span class="applicationTitle">UGUI: Git Branch Deleter</span>
           </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" style="float:right">
-            <li><a title="About" href="#about" class="dragoff glyphicon glyphicon-question-sign" aria-hidden="true"><span class="sr-only">About</span></a></li>
-            <li><a title="Exit" href="#exit" class="dragoff glyphicon glyphicon-remove-sign" aria-hidden="true"><span class="sr-only">Exit</span></a></li>
+            <li><a title="About" href="#about" class="drag-disable glyphicon glyphicon-question-sign" aria-hidden="true"><span class="sr-only">About</span></a></li>
+            <li><a title="Exit" href="#exit" class="drag-disable glyphicon glyphicon-remove-sign" aria-hidden="true"><span class="sr-only">Exit</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -156,7 +127,7 @@
               <button id="updateBranchList" class="btn btn-info">Update Branch List</button>
             </div>
             <div class="col-xs-6 col-s-6 col-md-6 col-l-6 text-right">
-              <button type="submit" class="sendCmdArgs btn btn-danger">Delete!</button>
+              <button type="submit" class="delete-local btn btn-danger">Delete!</button>
             </div>
           </div>
           <hr />
@@ -242,17 +213,28 @@
 
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <span class="pull-right versionApp" title="Version">V1.0.0</span>
-                  <h3 class="panel-title">About <span class="applicationName">UGUI: Git Branch Deleter</span></h3>
+                  <span class="pull-right versionApp" title="Version">V1.3.0</span>
+                  <h3 class="panel-title">About <span class="applicationTitle">UGUI: Git Branch Deleter</span></h3>
                 </div>
                 <div class="panel-body">
                   <p class="well well-sm">
                     This application allows you to select a Git repository, list all local branches, and delete the ones you no longer need. You must have the <a href="https://git-scm.com" class="external-link">command line version of Git</a> installed for UGUI: Git Branch Deleter to work.
                   </p>
                   <p>
-                    <span class="applicationName">UGUI: Git Branch Deleter</span> created by <span class="authorName">Jared Wilcurt</span>.<br />
+                    <span class="applicationTitle">UGUI: Git Branch Deleter</span> is created by <span class="authorName">Jared Wilcurt</span>.<br />
                     Git was created by Linus Torvald and is maintained by the <a href="https://github.com/git/git" class="external-link">open source community</a>.
                   </p>
+
+                  <!--
+                    This is the "Check for Updates" feature. If your app is publicly avaliable on GitHub
+                    you can use it. Since this takes a few extra steps to set up, it is commented out by
+                    default. See: http://ugui.io/api for more information about this feature.
+                  -->
+                  <p id="updateResults"></p>
+                  <p class="text-center">
+                    <button id="updateChecker" class="btn btn-primary">Check for updates</button>
+                  </p>
+
                 </div>
               </div>
 
