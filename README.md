@@ -2,7 +2,7 @@
 
 This is a GUI that allows you to easily delete branches from a Git repo.
 
-* **Website:** http://thejaredwilcurt.github.io/UGUI-Git-Branch-Deleter
+* **Website:** http://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter
 
 ![Screenshot](/_img/screenshot.png "Screenshot")
 
