@@ -1,9 +1,9 @@
 @charset "utf-8";                 // Character type for the stylesheet
 
-@import url("https://fonts.googleapis.com/css?family=Ruda:700,900");
 @import "_ven.bootstrap.min.scss";
 
 //Stuff that goes at the start
+@import "_fonts.scss";
 @import "_var.sass";              // Sass Variables and Mixins - Does not effect page, but other Sass files reference this file.
 
 //Stuff that effects every page

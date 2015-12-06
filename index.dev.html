@@ -39,7 +39,7 @@
     <link rel="fluid-icon"                   href="_img/meta/fluid.png"   type="image/png"                     />
     <link rel="icon"                         href="favicon.ico"           type="image/x-icon"                  />
     <link rel="shortcut icon"                href="favicon.ico"           type="image/ico"                     />
-    <link rel="stylesheet"                   href="_style/style.css"             type="text/css"               />
+    <link rel="stylesheet"                   href="_style/style.css"      type="text/css"                      />
 
     <script src="_scripts/jquery-2.1.3.min.js"></script>
     <script src="_scripts/all.js"></script>
@@ -49,21 +49,21 @@
 
     <div class="container">
 
-      <div class="row">
-        <h1>UGUI: Git Branch Deleter</h1>
-      </div>
+      <header class="row">
+        <img src="_img/readme.png" alt="UGUI: Git Branch Deleter" />
+      </header>
 
       <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-center">
           <img src="_img/screenshot.png" alt="Screenshot" title="Screenshot" class="screenshot" />
-          <p><strong>System Requirements:</strong></p>
+          <h3>System Requirements:</h3>
           <ul>
             <li>85MB of avaliable disk space</li>
             <li>55MB of avaliable memory</li>
             <li><strong>Windows</strong> Vista, 7, 8, or 10 (XP may work but is not officially supported). Currently only supplying a 32-Bit version of UGUI: Git Branch Deleter for this platform. Will create a 64-bit if requested.</li>
-            <li><strong>OSX</strong> 10.7 and above (older versions are not officially supported and are not likely to work). Currently we are not pre-packaging for this OS, so you'll need NPM installed to do use it.</li>
-            <li><strong>Ubuntu</strong> 12 and 14 (Ubuntu 10 should work, other versions of Linux, especially Debian based, may work but only Ubuntu 12 and 14 are officially supported).  Currently we are not pre-packaging for this OS, so you'll need NPM installed to do use it.</li>
+            <li><strong>OSX</strong> 10.7 and above (older versions are not officially supported and are not likely to work). Currently we are not pre-packaging for this OS, so you'll need <a href="https://www.npmjs.com" target="_blank">NPM</a> installed to do use it.</li>
+            <li><strong>Ubuntu</strong> 12 and 14 (Ubuntu 10 should work, other versions of Linux, especially Debian based, may work but only Ubuntu 12 and 14 are officially supported).  Currently we are not pre-packaging for this OS, so you'll need <a href="https://www.npmjs.com" target="_blank">NPM</a> installed to do use it.</li>
             <li>Only x86 and x64 architectures are supported (32-Bit or 64-Bit)</li>
           </ul>
         </div>
@@ -73,11 +73,8 @@
           <div class="dl-btn-win">
             <a href="https://github.com/TheJaredWilcurt/UGUI-Git-Branch-Deleter/releases">Download for Windows</a>
           </div>
-          <div class="dl-btn-lin">
-            <a href="https://github.com/TheJaredWilcurt/UGUI-Git-Branch-Deleter/releases">Download for Linux</a>
-          </div>
-          <div class="dl-btn-osx">
-            <a href="https://github.com/TheJaredWilcurt/UGUI-Git-Branch-Deleter/releases">Download for OSX</a>
+          <div class="dl-btn-unix">
+            <a href="https://github.com/TheJaredWilcurt/UGUI-Git-Branch-Deleter/releases">Download for OSX/Linux</a>
           </div>
 
           <table id="output" class="table table-hover">
@@ -104,7 +101,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-center">
-          <p><strong>Installation instructions:</strong></p>
+          <h3>Installation instructions:</h3>
           <ul>
             <li><strong>Windows:</strong> Download, Unzip, Run exe.</li>
             <li><strong>Non-Windows:</strong> Download, Unzip, <code>npm install</code>, <code>npm start</code></li>
