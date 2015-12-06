@@ -4,6 +4,7 @@ $(document).ready(function(){
     }
 
     $.get("https://api.github.com/repos/TheJaredWilcurt/UGUI-Git-Branch-Deleter/releases", function(data){
+        $("#loader").remove();
         var totalDownloads = [];
         var win = [];
         var unix = [];
