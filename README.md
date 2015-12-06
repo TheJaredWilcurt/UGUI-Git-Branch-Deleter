@@ -1,5 +1,3 @@
-#UGUI: FLIF Website
+#UGUI: Git Branch Deleter Website
 
-http://flif-hub.github.io/UGUI_FLIF
-
-http://flif.info/UGUI_FLIF
+http://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter
