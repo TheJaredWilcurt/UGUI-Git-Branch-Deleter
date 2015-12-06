@@ -2,11 +2,13 @@
 
 This is a GUI that allows you to easily delete branches from a Git repo.
 
-* **Website:** http://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter
+###[Download UGUI: Git Branch Deleter](http://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter)
+
+Screenshot:
 
 ![Screenshot](/_img/screenshot.png "Screenshot")
 
-This was created using the [NW.js](http://nwjs.io) framework **[UGUI](http://ugui.io)**. Use it if you need to make cross-platform desktop applications fast.
+This project uses the  **[UGUI](http://ugui.io)** framework. It's great for fast development of cross-platform desktop applications.
 
 **Prerequisites:**
 
