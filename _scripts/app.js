@@ -28,7 +28,7 @@ function runApp() {
 
 
 
-
+    // require('nw.gui').Window.get().showDevTools();
 
 
 
@@ -49,24 +49,30 @@ function runApp() {
             ugui.helpers.runcmd(executableAndArgs, function(data) {
                 var branches = data.split("\n");
                 var isBranchCheckedOut = /^(?:\*\ )(?:[^\ ]*)$/gm;
+                var gus = "";
                 var jira = "";
                 var github = "";
-                var classes = '" class="external-link small col-xs-6 col-s-6 col-md-6 col-l-6"';
+                var classes = '" class="external-link small col-xs-4 col-s-4 col-md-4 col-l-4"';
 
                 for (var i = 0; i < (branches.length - 1); i++) {
                     var branch = branches[i].trim();
                     var checkedOutBranch = branches[i].trim();
                     var disableCheckoutOutBranch = '';
 
-                    if ( isBranchCheckedOut.test(branch) ) {
+                    if (isBranchCheckedOut.test(branch)) {
                         branch = branch.split("* ")[1];
                         checkedOutBranch = '<strong>' + branch + '</strong> <em class="small">Active branch</em>';
                         disableCheckoutOutBranch = 'disabled="disabled" ';
                     }
 
+                    if (ugui.args.gus && ugui.args.gus.value) {
+                        //https://gus.my.salesforce.com/_ui/search/ui/UnifiedSearchResults?str=W-9999999
+                        gus = '<a href="' + ugui.args.gus.value + '/_ui/search/ui/UnifiedSearchResults?str=' + branch + classes + '>GUS</a>';
+                    }
+
                     if (ugui.args.jira && ugui.args.jira.value) {
                         //https://jira.company.com:1236/browse/Ticket-9999
-                        jira = '<a href="' + ugui.args.jira.value + '/browse/' + branch + classes + '>Jira</a>';
+                        jira = ' <a href="' + ugui.args.jira.value + '/browse/' + branch + classes + '>Jira</a>';
                     }
 
                     if (ugui.args.github && ugui.args.github.value) {
@@ -80,6 +86,7 @@ function runApp() {
                             '<input ' + disableCheckoutOutBranch + 'type="radio" name="radioBranches" value="' + branch + '" /> ' + checkedOutBranch +
                           '</label> ' +
                           '<span class="col-xs-4 col-s-4 col-md-4 col-l-4">' +
+                            gus +
                             jira +
                             github +
                           '</span>' +
@@ -106,6 +113,7 @@ function runApp() {
                 });
             });
         }
+        checkGUSStatus();
         checkJiraStatus();
         checkGitHubStatus();
     }
@@ -143,26 +151,38 @@ function runApp() {
         $("#allBranches").css("height", branchContainerHeight + "px");
     });
 
-    $('#jira').click( function(e) {
+    $('#gus').click( function(e) {
         e.preventDefault();
+        $("#gusModal").fadeIn("slow");
+        $("body").addClass("no-overflow");
+    });
+
+    $('#jira').click(function (evt) {
+        evt.preventDefault();
         $("#jiraModal").fadeIn("slow");
         $("body").addClass("no-overflow");
     });
 
-    $('#github').click( function(e) {
-        e.preventDefault();
+    $('#github').click(function (evt) {
+        evt.preventDefault();
         $("#githubModal").fadeIn("slow");
         $("body").addClass("no-overflow");
     });
 
-    $("#jiraOK").on("click", function(event) {
-        event.preventDefault();
+    $("#gusOK").click(function(evt) {
+        evt.preventDefault();
+        ugui.helpers.buildUGUIArgObject();
+        $("#gusModal").slideUp("500", removeModal);
+    });
+
+    $("#jiraOK").click(function(evt) {
+        evt.preventDefault();
         ugui.helpers.buildUGUIArgObject();
         $("#jiraModal").slideUp("500", removeModal);
     });
 
-    $("#githubOK").on("click", function(event) {
-        event.preventDefault();
+    $("#githubOK").click(function(evt) {
+        evt.preventDefault();
         ugui.helpers.buildUGUIArgObject();
         $("#githubModal").slideUp("500", removeModal);
     });
@@ -173,6 +193,15 @@ function runApp() {
         ugui.helpers.saveSettings();
     }
 
+    function checkGUSStatus() {
+        if (ugui.args.gus && ugui.args.gus.value) {
+            $("#gus").removeClass("btn-default");
+            $("#gus").addClass("btn-primary");
+        } else {
+            $("#gus").removeClass("btn-primary");
+            $("#gus").addClass("btn-default");
+        }
+    }
     function checkJiraStatus() {
         if (ugui.args.jira && ugui.args.jira.value) {
             $("#jira").removeClass("btn-default");

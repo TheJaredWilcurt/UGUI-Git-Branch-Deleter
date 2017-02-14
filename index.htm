@@ -138,11 +138,28 @@
                 <span id="branchcount" class="small"></span>
               </span>
               <div id="button-group" class="pull-right">
+                <button id="gus"    class="btn btn-sm btn-default">Gus</button>
                 <button id="jira"   class="btn btn-sm btn-default">Jira</button>
                 <button id="github" class="btn btn-sm btn-default">GitHub</button>
               </div>
               <br />
               <div id="allBranches" class="col-xs-12 col-s-12 col-md-12 col-l-12 form-control table radio"></div>
+            </div>
+          </div>
+
+          <div id="gusModal" class="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <h5><strong>GUS URL</strong></h5>
+                  <input data-argName="gus" type="text" placeholder="https://gus.my.salesforce.com" class="form-control" />
+                  <div class="row">
+                    <div class="col-xs-12 col-s-12 col-md-12 col-l-12">
+                      <button id="gusOK" class="btn btn-sm btn-info pull-right">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
