@@ -1,8 +1,8 @@
-#![UGUI: Git Branch Deleter Logo](/_img/readme.png "UGUI: Git Branch Deleter")
+# ![UGUI: Git Branch Deleter Logo](/_img/readme.png "UGUI: Git Branch Deleter")
 
 This is a GUI that allows you to easily delete branches from a Git repo.
 
-###[Download UGUI: Git Branch Deleter](http://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter)
+### [Download UGUI: Git Branch Deleter](http://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter)
 
 Screenshot:
 
