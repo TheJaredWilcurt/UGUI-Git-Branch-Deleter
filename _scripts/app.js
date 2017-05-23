@@ -66,17 +66,18 @@ function runApp() {
                     }
 
                     if (ugui.args.gus && ugui.args.gus.value) {
-                        //https://gus.my.salesforce.com/_ui/search/ui/UnifiedSearchResults?str=W-9999999
-                        gus = '<a href="' + ugui.args.gus.value + '/_ui/search/ui/UnifiedSearchResults?str=' + branch + classes + '>GUS</a>';
+                        // https://gus.my.salesforce.com/_ui/search/ui/UnifiedSearchResults?str=W-9999999
+                        // https://gus.my.salesforce.com/apex/ADM_WorkLocator?bugorworknumber=W-9999999
+                        gus = '<a href="' + ugui.args.gus.value + '/apex/ADM_WorkLocator?bugorworknumber=' + branch + classes + '>GUS</a>';
                     }
 
                     if (ugui.args.jira && ugui.args.jira.value) {
-                        //https://jira.company.com:1236/browse/Ticket-9999
+                        // https://jira.company.com:1236/browse/Ticket-9999
                         jira = ' <a href="' + ugui.args.jira.value + '/browse/' + branch + classes + '>Jira</a>';
                     }
 
                     if (ugui.args.github && ugui.args.github.value) {
-                        //https://github.company.com/Organization/Repo/Branch
+                        // https://github.company.com/Organization/Repo/Branch
                         github = ' <a href="' + ugui.args.github.value + '/branches/all?query=' + branch + classes + '>GitHub</a>';
                     }
 
