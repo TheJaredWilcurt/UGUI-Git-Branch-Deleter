@@ -51,6 +51,7 @@ function runApp() {
                 var isBranchCheckedOut = /^(?:\*\ )(?:[^\ ]*)$/gm;
                 var gus = "";
                 var jira = "";
+                var clubhouse = "";
                 var github = "";
                 var classes = '" class="external-link small col-xs-4 col-s-4 col-md-4 col-l-4"';
 
@@ -76,6 +77,15 @@ function runApp() {
                         jira = ' <a href="' + ugui.args.jira.value + '/browse/' + branch + classes + '>Jira</a>';
                     }
 
+                    if (ugui.args.clubhouse && ugui.args.clubhouse.value) {
+                        // CH1234-new-feature => CH1234-new-feature => ch1234 => 1234
+                        var clubhouseId = branch.toLowerCase();
+                        clubhouseId = clubhouseId.split('-')[0];
+                        clubhouseId = clubhouseId.split('ch')[1];
+                        // https://app.clubhouse.io/Organization/story/9999
+                        clubhouse = ' <a href="' + ugui.args.clubhouse.value + '/story/' + clubhouseId + classes + '>Clubhouse</a>';
+                    }
+
                     if (ugui.args.github && ugui.args.github.value) {
                         // https://github.company.com/Organization/Repo/Branch
                         github = ' <a href="' + ugui.args.github.value + '/branches/all?query=' + branch + classes + '>GitHub</a>';
@@ -89,6 +99,7 @@ function runApp() {
                           '<span class="col-xs-4 col-s-4 col-md-4 col-l-4">' +
                             gus +
                             jira +
+                            clubhouse +
                             github +
                           '</span>' +
                         '</div>'
@@ -116,6 +127,7 @@ function runApp() {
         }
         checkGUSStatus();
         checkJiraStatus();
+        checkClubhouseStatus();
         checkGitHubStatus();
     }
 
@@ -164,6 +176,12 @@ function runApp() {
         $("body").addClass("no-overflow");
     });
 
+    $('#clubhouse').click(function (evt) {
+        evt.preventDefault();
+        $("#clubhouseModal").fadeIn("slow");
+        $("body").addClass("no-overflow");
+    });
+
     $('#github').click(function (evt) {
         evt.preventDefault();
         $("#githubModal").fadeIn("slow");
@@ -180,6 +198,12 @@ function runApp() {
         evt.preventDefault();
         ugui.helpers.buildUGUIArgObject();
         $("#jiraModal").slideUp("500", removeModal);
+    });
+
+    $("#clubhouseOK").click(function(evt) {
+        evt.preventDefault();
+        ugui.helpers.buildUGUIArgObject();
+        $("#clubhouseModal").slideUp("500", removeModal);
     });
 
     $("#githubOK").click(function(evt) {
@@ -210,6 +234,15 @@ function runApp() {
         } else {
             $("#jira").removeClass("btn-primary");
             $("#jira").addClass("btn-default");
+        }
+    }
+    function checkClubhouseStatus() {
+        if (ugui.args.clubhouse && ugui.args.clubhouse.value) {
+            $("#clubhouse").removeClass("btn-default");
+            $("#clubhouse").addClass("btn-primary");
+        } else {
+            $("#clubhouse").removeClass("btn-primary");
+            $("#clubhouse").addClass("btn-default");
         }
     }
     function checkGitHubStatus() {
