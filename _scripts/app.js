@@ -53,7 +53,7 @@ function runApp() {
                 var jira = "";
                 var clubhouse = "";
                 var github = "";
-                var classes = '" class="external-link small col-xs-4 col-s-4 col-md-4 col-l-4"';
+                var classes = '" class="external-link small"';
 
                 for (var i = 0; i < (branches.length - 1); i++) {
                     var branch = branches[i].trim();
@@ -93,10 +93,11 @@ function runApp() {
 
                     $("#allBranches").append(
                         '<div class="col-xs-12 col-s-6 col-md-6 col-l-6">' +
-                          '<label class="col-xs-8 col-s-8 col-md-8 col-l-8 branch-name">' +
-                            '<input ' + disableCheckoutOutBranch + 'type="radio" name="radioBranches" value="' + branch + '" /> ' + checkedOutBranch +
+                          '<label class="col-xs-8 col-s-8 col-md-7 col-l-8 branch-name">' +
+                            '<input ' + disableCheckoutOutBranch + 'type="radio" name="radioBranches" value="' + branch + '" /> ' +
+                            '<div class="truncate">' + checkedOutBranch + '</div>' +
                           '</label> ' +
-                          '<span class="col-xs-4 col-s-4 col-md-4 col-l-4">' +
+                          '<span class="col-xs-4 col-s-4 col-md-5 col-l-4 text-right">' +
                             gus +
                             jira +
                             clubhouse +
