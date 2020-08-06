@@ -1,7 +1,7 @@
 {
     "name": "git_branch_deleter",
     "homepage": "https://TheJaredWilcurt.github.io/UGUI-Git-Branch-Deleter",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "author": "Jared Wilcurt",
     "description": "Allows you to easily delete outdated git branches.",
     "keywords": [ "git", "branch", "deleter" ],

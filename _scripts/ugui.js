@@ -1905,7 +1905,7 @@ function openDefaultBrowser() {
     });
 }
 //Run once on page load
-openDefaultBrowser();
+// openDefaultBrowser(); // already callled from getAboutModal
 
 
 
